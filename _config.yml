@@ -5,6 +5,8 @@ timezone:       America/Los_Angeles
 markdown:       kramdown
 highlighter:    rouge
 
+fail
+
 # Allowed plugins: https://pages.github.com/versions/
 plugins: &plugins
     - jekyll-paginate
