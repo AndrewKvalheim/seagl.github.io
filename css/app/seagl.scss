@@ -273,3 +273,22 @@ strong {
     width: 50%;
   }
 }
+
+.restreamer {
+  display: block;
+  height: 0;
+  padding-bottom: calc(100% / (16 / 9));
+  position: relative;
+  width: 100%;
+
+  & > iframe {
+    background-color: #0003;
+    border: none;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
