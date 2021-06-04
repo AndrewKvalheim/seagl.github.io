@@ -1,3 +1,6 @@
+{% comment %} Workaround for https://github.com/Shopify/liquid/issues/1034 {% endcomment %}
+{% assign nav = nil %}{% if page contains "nav" %}{% assign nav = page.nav %}{% endif %}
+
 <nav class="navbar navbar-default" role="navigation" id="main-nav">
   <!-- Brand and toggle get grouped for better mobile display -->
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".top-nav-collapse">
@@ -13,14 +16,14 @@
 
   <div id="main-nav-container" class="collapse navbar-collapse top-nav-collapse">
     <ul class="nav pull-left navbar-nav main-nav-links inline-list">
-      <li {% if page.nav == "home" %} class="active" | {% endif %} ><a href="/">Home</a></li>
+      <li {% if nav == "home" %} class="active" | {% endif %} ><a href="/">Home</a></li>
       <li><a href="{{ site.custom.url.schedule }}">2020 Program</a></li>
-      <!-- <li {% if page.nav == "schedule" %} class="active" | {% endif %} ><a href="/schedule/{{ site.custom.year }}.html">Schedule</a></li> -->
+      <!-- <li {% if nav == "schedule" %} class="active" | {% endif %} ><a href="/schedule/{{ site.custom.year }}.html">Schedule</a></li> -->
     </ul>
 
     <ul class="nav pull-right navbar-nav main-nav-links inline-list">
-      <li {% if page.nav == "get_involved" %} class="active" | {% endif %} ><a href="/get_involved.html">Get Involved</a></li>
-      <li {% if page.nav == "sponsors" %} class="active" | {% endif %} ><a href="/sponsors/">Sponsors</a></li>
+      <li {% if nav == "get_involved" %} class="active" | {% endif %} ><a href="/get_involved.html">Get Involved</a></li>
+      <li {% if nav == "sponsors" %} class="active" | {% endif %} ><a href="/sponsors/">Sponsors</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
